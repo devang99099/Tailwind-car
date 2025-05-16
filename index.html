@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Custom Tailwind font usage */
+    @layer base {
+      body {
+        font-family: 'Poppins';
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    #scroll {
+      animation: scroll 30s linear infinite;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body class="font-Poppins overflow-x-hidden">
+  <div class="max-w-[1440px] container max-2xl:overflow-hidden mx-auto">
+    <main>
+      <section class="relative  ">
+        <div
+          class="max-w-[1120px] flex mx-auto justify-between items-center max-lg:max-w-[1440px] max-md:gap-[30px] max-lg:gap-[50px] ">
+          <div>
+            <img src="./img/logo.png" alt="" class="pt-[40.64px] pb-[8px]  max-lg:pt-[20px] max-lg:pb-[20px]" />
+          </div>
+          <button id="menu" class="block md:hidden z-100 ml-[250px] max-sm:ml-[200px]">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+
+            <ul
+              class="flex gap-[40px] font-medium pt-[48px] pb-[8px] max-lg:gap-[30px] max-md:gap-[20px] max-sm:gap-[15px] max-md:hidden ">
+              <li>
+                <a href="#"
+                  class="hover:text-[#1572D3] duration-300 text-[16px] text-[#484848] max-lg:text-[12px]">Become
+                  a renter</a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-[#1572D3] duration-300 text-[16px] text-[#484848] max-lg:text-[12px]">Rental
+                  deals</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#1572D3] duration-300 text-[16px] text-[#484848] max-lg:text-[12px]">How
+                  it
+                  work</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#1572D3] duration-300 text-[16px] text-[#484848] max-lg:text-[12px]">Why
+                  choose us</a>
+              </li>
+            </ul>
+          </div>
+          <div id="mobileMenu" class="fixed inset-0 bg-white z-10 md:hidden hidden pt-20 px-6">
+            <nav class="mb-8">
+              <ul class="flex flex-col gap-4 text-lg font-medium">
+                <li>
+                  <a href="" class="block hover:text-[#1572D3]">Become a renter</a>
+                </li>
+                <li>
+                  <a href="" class="block hover:text-[#1572D3]">Rental deals</a>
+                </li>
+                <li>
+                  <a href="" class="block hover:text-[#1572D3]">How it work</a>
+                </li>
+                <li>
+                  <a href="" class="block hover:text-[#1572D3]">Why choose us</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="flex flex-col space-y-4">
+              <button class="py-2 px-4 text-center hover:text-[#1572D3]">
+                Sign in
+              </button>
+              <button class="py-2 px-4 bg-[#1572D3] text-white rounded-lg hover:bg-[#135fb0]">
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-[24px] mt-[40px]  max-md:hidden">
+            <button type="submit"
+              class="text-[16px] hover:underline cursor-pointer text-[#484848] max-lg:text-[12px]">Sign
+              in</button>
+            <button type="submit"
+              class="text-[16px] bg-[#1572D3] text-white py-[8px] px-[32px] rounded-[8px] font-weight:400 max-lg:text-[12px] max-lg:py-[4px] max-lg:px-[6px]  hover:bg-blue-700 duration-300 transition cursor-pointer">
+              Sign up
+            </button>
+          </div>
+        </div>
+        <div class=" mt-[99px] flex flex-col ">
+          <div
+            class="max-w-[548px] pt-[32px] pl-[160px] max-lg:pl-[10px] max-lg:max-w-[397px] max-lg:pt-[43px] max-xl:pl-[10px] max-xl:max-w-[397px] max-lg:mt-[400px] max-lg:mx-auto max-md:mt-[250px] max-sm:mt-[300px]">
+            <h1 class="text-[48px]/[100%] font-semibold max-sm:text-[40px]">Find, book and rent a car <span
+                class="text-[#1572D3] relative">Easily<img src="./img/Vector 1.png" alt=""
+                  class="absolute bottom-[-8px] right-0"></span>
+            </h1>
+            <p class="my-[40px] text-[18px]/[150%] font-weight: 400">Get a car wherever and whenever you need it with
+              your
+              IOS and Android device.</p>
+            <div class="flex gap-[11.51px] mx-auto max-md:justify-evenly max-lg:justify-evenly">
+              <img src="./img/google play.png" alt="">
+              <img src="./img/app store.png" alt="">
+            </div>
+          </div>
+          <div>
+            <div>
+              <div
+                class="absolute top-[175px] right-[-203px] z-1 max-lg:right-[-220px] max-xl:right-[-270px] max-md:left-[68px]">
+                <img src="./img/car 2.png" alt="" class="max-lg:w-[760px] max-xl:w-[820px] max-md:w-[450px] ">
+              </div>
+              <div
+                class="absolute top-[0px] right-[-221px] -z-10 max-md:left-[115px] max-md:top-[40px] max-lg:right[-170px]">
+                <img src="./img/Frame.png" alt="" class="max-md:w-[450px] max-lg:w-[650px]">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class=" max-w-[1120px] flex mx-auto justify-between mt-[201px] mb-[48px] shadow-xl rounded-lg p-[12px] items-center bg-white max-lg:mt-[80px] max-md:flex-col max-md:gap-[10px]  max-md:mt-[50px] max-md:max-w-[300px]">
+          <div class="flex items-center max-md:w-full  ">
+            <img src="./img/location.png" alt="" class="size-[32px] my-[2.5px] max-md:ml-[24px] ">
+            <div class="ml-[16px] my-[1px]">
+              <p class="text-[16px] font-medium">Location</p>
+              <p class="text-[14px] text-[#B6B6B6] font-normal">Search your location</p>
+            </div>
+          </div>
+          <div class="flex items-center border-l border-l-[#B6B6B6] max-md:border-none max-md:w-full">
+            <img src="./img/calendar.png" alt="" class="size-[32px] my-[2.5px] ml-[24px]">
+            <div class="ml-[16px] -my-[-5px]">
+              <p class="text-[16px] font-medium">Pickup date</p>
+              <p class="text-[14px] text-[#B6B6B6] font-normal">Tue 15 Feb, 09:00</p>
+            </div>
+          </div>
+          <div class="flex items-center border-l border-l-[#B6B6B6] max-md:border-none max-md:w-full">
+            <img src="./img/calendar.png" alt="" class="size-[32px] my-[2.5px] ml-[24px]">
+            <div class="ml-[16px] my-[1px]">
+              <p class="text-[16px] font-medium">Return date</p>
+              <p class="text-[14px] text-[#B6B6B6] font-normal">Thu 16 Feb, 11:00</p>
+            </div>
+          </div>
+          <div>
+            <button type="submit" value="search"
+              class="py-[15.5px] px-[51px] bg-[#1572D3] hover:bg-blue-700 duration-300 transition cursor-pointer text-white text-[16px] rounded-[8px] max-md:ml-[30px] max-md:mt-3">
+              Search</button>
+          </div>
+        </div>
+
+
+      </section>
+
+
+
+      <section class="overflow-hidden mx-auto">
+        <div class="py-[86px] px-4 sm:px-6 md:px-12">
+          <div class="flex flex-col items-center justify-center pb-[80px] sm:pb-[100px]">
+            <div class="text-center">
+              <a href="#"
+                class="py-4 px-8 bg-[#1572D31A] text-[#1572D3] text-sm font-medium leading-[150%] rounded-[8px] hover:bg-[#1572D3] hover:text-white transition-colors duration-300 cursor-pointer">HOW
+                IT WORK</a>
+              <h2
+                class="pt-8 pb-16 font-medium text-[28px] sm:text-[32px] md:text-[38px] text-center max-w-[700px] mx-auto">
+                Rent with following 3 working steps
+              </h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-15">
+              <div class="flex flex-col items-center text-center max-w-[250px]">
+                <div class="bg-[#ECF5FF] p-8 rounded-[16px]">
+                  <img src="img/location-tick.png" alt="Choose location">
+                </div>
+                <div class="pt-10">
+                  <h4 class="text-lg font-medium pb-6">Choose location</h4>
+                  <p class="text-sm font-medium text-[#6D6D6D]">
+                    Choose your location and find <br>
+                    your best car
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center text-center max-w-[250px]">
+                <div class="bg-[#ECF5FF] p-8 rounded-[16px]">
+                  <img src="img/calendar.png" alt="Pick-up date">
+                </div>
+                <div class="pt-10">
+                  <h4 class="text-lg font-medium pb-6">Pick-up date</h4>
+                  <p class="text-sm font-medium text-[#6D6D6D]">
+                    Select your pick up date and <br>
+                    time to book your car
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center text-center max-w-[250px]">
+                <div class="bg-[#ECF5FF] p-8 rounded-[16px]">
+                  <img src="img/car.png" alt="Book your car">
+                </div>
+                <div class="pt-10">
+                  <h4 class="text-lg font-medium pb-6">Book your car</h4>
+                  <p class="text-sm font-medium text-[#6D6D6D]">
+                    Book your car and we will deliver <br>
+                    it directly to you
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full overflow-hidden">
+            <div class=" inline-flex flex-nowrap w-max " aria-controls="true" id="scroll">
+              <ul class="flex items-center justify-center [&_li]:mx-8 [&_img]:max-w-none">
+                <li class="slide">
+                  <img src="img/Honda.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/jaguar.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/nissan.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/volvo.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/audi.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/acura.png" alt="" />
+                </li>
+              </ul>
+
+              <ul class="flex items-center justify-center [&_li]:mx-8 [&_img]:max-w-none">
+                <li class="slide">
+                  <img src="img/Honda.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/jaguar.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/nissan.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/volvo.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/audi.png" alt="" />
+                </li>
+                <li class="slide">
+                  <img src="img/acura.png" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <section class="relative max-2xl:overflow-y-hidden ">
+        <div class="flex py-24 max-lg:flex-col">
+          <div class="w-1/2 max-lg:w-full">
+            <div class="absolute top-75 -left-46 max-lg:-left-10 max-lg:top-65 max-md:-left-40">
+              <img src="img/audi main.png" alt="" class="max-lg:w-[900px] max-xl:w-[700px]">
+            </div>
+            <div class="absolute top-25 -left-100 max-lg:-left-70 max-lg:top-45 -z-1 ">
+              <img src="img/Audi Vector.png" alt="">
+            </div>
+          </div>
+          <div
+            class="w-1/2 items-center pr-32 max-xl:pr-10 max-lg:w-full max-lg:pt-[570px] max-lg:px-24 max-md:px-8 max-sm:">
+            <div class="max-lg:pb-[56px]">
+              <a href=""
+                class="bg-[#1572D31A] text-[#1572D3] font-medium text-[14px] rounded-[8px] py-[16px] px-[32px] hover:bg-[#1572D3] hover:text-white transition-colors duration-300">WHY
+                CHOOSE US</a>
+              <h2 class="font-medium text-[38px] pt-[32px]">
+                We offer the best experience <br>
+                with our rental deals
+              </h2>
+            </div>
+
+
+            <div class="pt-14 flex flex-col gap-10 items-start justify-center">
+              <div class="flex gap-6 items-center justify-start">
+                <div class=" rounded-lg">
+                  <img src="img/money.png" alt="location tick">
+                </div>
+                <div>
+                  <h6 class="text-xl font-medium">Best price guaranteed</h6>
+                  <p class="text-[#6D6D6D]">
+                    Find a lower price? We’ll refund you 100%
+                    <br class="max-[512px]:hidden">of the difference.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6 items-center justify-start">
+                <div class=" rounded-lg">
+                  <img src="img/men.png" alt="location tick">
+                </div>
+                <div>
+                  <h6 class="text-xl font-medium">Experience driver</h6>
+                  <p class="text-[#6D6D6D]">
+                    Don’t have driver? Don’t worry, we have many
+                    <br class="max-[512px]:hidden">experienced driver for you.`
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6 items-center justify-start">
+                <div class=" rounded-lg">
+                  <img src="img/24.png" alt="location tick">
+                </div>
+                <div>
+                  <h6 class="text-xl font-medium">24 hour car delivery</h6>
+                  <p class="text-[#6D6D6D]">
+                    Book your car anytime and we will deliver it
+                    <br class="max-[512px]:hidden">directly to you.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6 items-center justify-start">
+                <div class=" rounded-lg">
+                  <img src="img/comment.png" alt="location tick">
+                </div>
+                <div>
+                  <h6 class="text-xl font-medium">24/7 technical support</h6>
+                  <p class="text-[#6D6D6D]">
+                    Have a question? Contact Rentcars support
+                    <br class="max-[512px]:hidden">any time when you have problem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <section class="overflow-hidden mx-auto">
+        <div class="max-w-[1120px] mx-auto py-[84px]">
+          <div class="text-center">
+            <div
+              class="inline-block px-6 py-2 bg-[#1572D31A] text-[#1572D3] font-medium rounded-[8px] mb-4 z-1000 hover:bg-[#1572D3] hover:text-white transition-colors duration-300 cursor-pointer">
+              POPULAR RENTAL DEALS
+            </div>
+            <h2 class="pt-[24px] text-2xl sm:text-3xl md:text-4xl font-medium text-[#333333]">
+              Most popular cars rental deals
+            </h2>
+          </div>
+          <div id="car-card"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-[32px] max-lg:gap-1 mt-[64px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+              <div class="p-6">
+                <img src="img/jaguare blue.png" alt="Jaguar XE L P250"
+                  class="w-full object-contain mb-4 hover:scale-110 duration-300">
+                <h3 class="text-[16px] font-[500] text-gray-800 mb-2">Jaguar XE L P250</h3>
+                <div class="flex items-center mb-4 text-[12px] font-[500px]">
+                  <div class="flex text-yellow-400 mr-2 hover:scale-125 duration-300">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="font-semibold">4.8</span>
+                  <span class="text-gray-500 ml-1">(2436 reviews)</span>
+                </div>
+
+                <div class="grid grid-cols-[1fr_71px] grid-rows-2 gap-2 mb-[24px]">
+                  <div class="flex items-center">
+                    <img src="img/user.png" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">4 Passengers</span>
+                  </div>
+                  <div class="flex items-end">
+                    <img src="img/service.png" alt="" class="text-gray-400 mr-[4px hover:scale-110 duration-300]">
+                    <span class="text-[12px] font-[400] text-gray-400">Auto</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/AC.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">Air Conditioning</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/door.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">4 Doors</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                  <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-gray-500">Price</span>
+                    <div>
+                      <span class="text-[16px] font-semibold text-gray-800">$1,800</span>
+                      <span class="text-gray-500 text-[16px]">/day</span>
+                    </div>
+                  </div>
+                  <a href="#"
+                    class="block w-full bg-blue-500 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-md transition duration-300">
+                    Rent Now <i class="fas fa-arrow-right ml-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+              <div class="p-6">
+                <img src="img/Audi white.png" alt="Audi R8"
+                  class="w-full object-contain mb-[28px] hover:scale-110 duration-300">
+                <h3 class="text-[16px] font-[500] text-gray-800 mb-2">Audi R8</h3>
+                <div class="flex items-center mb-4 text-[12px] font-[500px]">
+                  <div class="flex text-yellow-400 mr-2 hover:scale-125 duration-300">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="font-semibold">4.6</span>
+                  <span class="text-gray-500 ml-1">(1936 reviews)</span>
+                </div>
+
+                <div class="grid grid-cols-[1fr_71px] grid-rows-2 gap-2 mb-[24px]">
+                  <div class="flex items-center">
+                    <img src="img/user.png" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">2 Passengers</span>
+                  </div>
+                  <div class="flex items-end">
+                    <img src="img/service.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">Auto</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/AC.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">Air Conditioning</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/door.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">2 Doors</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                  <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-gray-500">Price</span>
+                    <div>
+                      <span class="text-[16px] font-semibold text-gray-800">$2,100</span>
+                      <span class="text-gray-500 text-[16px]">/day</span>
+                    </div>
+                  </div>
+                  <a href="#"
+                    class="block w-full bg-blue-500 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-md transition duration-300">
+                    Rent Now <i class="fas fa-arrow-right ml-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+              <div class="p-6">
+                <img src="img/BMW.png" alt="BMW M3" class="w-full object-contain mb-4 hover:scale-110 duration-300">
+                <h3 class="text-[16px] font-[500] text-gray-800 mb-2">BMW M3</h3>
+                <div class="flex items-center mb-4 text-[12px] font-[500px]">
+                  <div class="flex text-yellow-400 mr-2 hover:scale-125 duration-300">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="font-semibold">4.5</span>
+                  <span class="text-gray-500 ml-1">(2036 reviews)</span>
+                </div>
+
+                <div class="grid grid-cols-[1fr_71px] grid-rows-2 gap-2 mb-[24px]">
+                  <div class="flex items-center">
+                    <img src="img/user.png" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">4 Passengers</span>
+                  </div>
+                  <div class="flex items-end">
+                    <img src="img/service.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">Auto</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/AC.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">Air Conditioning</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/door.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">4 Doors</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                  <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-gray-500">Price</span>
+                    <div>
+                      <span class="text-[16px] font-semibold text-gray-800">$1,600</span>
+                      <span class="text-gray-500 text-[16px]">/day</span>
+                    </div>
+                  </div>
+                  <a href="#"
+                    class="block w-full bg-blue-500 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-md transition duration-300">
+                    Rent Now <i class="fas fa-arrow-right ml-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+              <div class="p-6">
+                <img src="img/Lamborghini.png" alt="Lamborghini Huracan"
+                  class="w-full  object-contain mb-[28px] hover:scale-110 duration-300">
+                <h3 class="text-[16px] font-[500] text-gray-800 mb-2">Lamborghini Huracan</h3>
+                <div class="flex items-center mb-4 text-[12px] font-[500px]">
+                  <div class="flex text-yellow-400 mr-2 hover:scale-125 duration-300">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="font-semibold">4.3</span>
+                  <span class="text-gray-500 ml-1">(2236 reviews)</span>
+                </div>
+
+                <div class="grid grid-cols-[1fr_71px] grid-rows-2 gap-2 mb-[24px]">
+                  <div class="flex items-center">
+                    <img src="img/user.png" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">2 Passengers</span>
+                  </div>
+                  <div class="flex items-end">
+                    <img src="img/service.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] font-[400] text-gray-400">Auto</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/AC.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">Air Conditioning</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="img/door.png" alt="" class="text-gray-400 mr-[4px] hover:scale-110 duration-300">
+                    <span class="text-[12px] text-gray-400">2 Doors</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                  <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-gray-500">Price</span>
+                    <div>
+                      <span class="text-[16px] font-semibold text-gray-800">$2,300</span>
+                      <span class="text-gray-500 text-[16px]">/day</span>
+                    </div>
+                  </div>
+                  <a href="#"
+                    class="block w-full bg-blue-500 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-md transition duration-300">
+                    Rent Now <i class="fas fa-arrow-right ml-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="text-center mt-[64px]">
+            <a href="#"
+              class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition duration-300">
+              Show all vehicles &gt;
+            </a>
+          </div>
+      </section>
+      <section class="overflow-hidden mx-auto">
+        <div class="overflow-hidden m-auto relative py-23 bg-[#F7FBFF]">
+          <div>
+            <img src="img/left.png" class="absolute top-[70px] left-[137px] max-lg:hidden" alt="">
+            <img src="img/right.png" class="absolute -top-[70px] right-[160px] max-lg:hidden" alt="">
+          </div>
+          <div class="text-center px-4 pb-20">
+            <a href="#"
+              class="bg-[#1572D31A] text-[#1572D3] rounded-lg px-8 py-4 text-[14px] font-500 transition-all hover:bg-[#1572D3] hover:text-white">TESTIMONIALS</a>
+            <h2 class="font-medium text-4xl pt-10">What people say about us?</h2>
+          </div>
+          <div class="px-40 swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div
+                class="overflow-hidden shadow-lg bg-white rounded-xl swiper-slide max-w-[794px] max-md:max-w-[494px]">
+                <div class="flex items-center space-x-6 w-[100%] max-sm:flex-col">
+                  <div class="relative w-1/2 max-sm:w-full h-[500px]">
+                    <img src="img/man.png" alt="Charlie Johnson"
+                      class="absolute inset-0 w-full h-full object-cover shadow-md">
+                  </div>
+                  <div class="flex flex-col justify-between w-1/2 max-sm:w-full max-sm:p-8 pr-6">
+                    <h5 class="text-4xl font-medium text-[#383838]">
+                      5.0 <span class="text-xl">stars</span>
+                    </h5>
+                    <div class="flex items-center pt-2">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                    </div>
+                    <div class="pt-6">
+                      <p class="text-[#282828] text-lg">
+                        “I have been using your services for 3 years. Your service is great, I will continue to use your
+                        service.”
+                      </p>
+                      <h6 class="pt-8 text-[#252525] text-xl font-medium">
+                        Jenny Wilson
+                      </h6>
+                      <p class="text-[#838383] text-sm">From New York, US</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="overflow-hidden shadow-lg bg-white rounded-xl swiper-slide max-w-[794px]  max-md:max-w-[494px]">
+                <div class="flex items-center space-x-6 w-[100%] max-sm:flex-col">
+                  <div class="relative w-1/2 max-sm:w-full h-[500px]">
+                    <img src="img/man.png" alt="Charlie Johnson"
+                      class="absolute inset-0 w-full h-full object-cover shadow-md">
+                  </div>
+                  <div class="flex flex-col justify-between w-1/2 max-sm:w-full max-sm:p-8 pr-6">
+                    <h5 class="text-4xl font-medium text-[#383838]">
+                      5.0 <span class="text-xl">stars</span>
+                    </h5>
+                    <div class="flex items-center pt-2">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                    </div>
+                    <div class="pt-6">
+                      <p class="text-[#282828] text-lg">
+                        “I feel very secure when using caretall's services. Your customer
+                        care team is very enthusiastic, and the driver is always on time.”
+                      </p>
+                      <h6 class="pt-8 text-[#252525] text-xl font-medium">
+                        Charlie Johnson
+                      </h6>
+                      <p class="text-[#838383] text-sm">From New York, US</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="overflow-hidden shadow-lg bg-white rounded-xl swiper-slide max-w-[794px]  max-md:max-w-[494px]">
+                <div class="flex items-center space-x-6 w-[100%] max-sm:flex-col">
+                  <div class="relative w-1/2 max-sm:w-full h-[500px]">
+                    <img src="img/female.png" alt="Charlie Johnson"
+                      class="absolute inset-0 w-full h-full object-cover shadow-md">
+                  </div>
+                  <div class="flex flex-col justify-between w-1/2 max-sm:w-full max-sm:p-8 pr-6">
+                    <h5 class="text-4xl font-medium text-[#383838]">
+                      5.0 <span class="text-xl">stars</span>
+                    </h5>
+                    <div class="flex items-center pt-2">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                      <img src="img/Star 1.png" alt="Star" class="w-6">
+                    </div>
+                    <div class="pt-6">
+                      <p class="text-[#282828] text-lg">
+                        “I feel very secure when using caretall's services. Your customer
+                        care team is very enthusiastic, and the driver is always on time.”
+                      </p>
+                      <h6 class="pt-8 text-[#252525] text-xl font-medium">
+                        Charlie Johnson
+                      </h6>
+                      <p class="text-[#838383] text-sm">From New York, US</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+          </div>
+        </div>
+      </section>
+      <section class="overflow-hidden mx-auto">
+        <div class="relative flex justify-between max-md:flex-col">
+          <div>
+            <img src="img/Vector.png" alt="" class="max-md:mx-auto">
+          </div>
+          <div
+            class="absolute top-[100px] left-[160px] max-w-[480px] max-xl:max-w-[400px] max-xl:left-[120px] max-lg:max-w-[240px] max-lg:left-[100px] max-md:mx-auto max-sm:left-[50px]">
+            <P class="inline-block px-6 py-3 bg-[#1572D31A] text-[#1572D3] rounded-[8px] z-1000 hover:bg-[#1572D3]
+            hover:text-white transition-colors duration-300 cursor-pointer text-[14px] max-md:ml-10 max-sm:ml-11">
+              Download</P>
+            <h2 class="text-[48px] font-[600] pt-[16px] max-xl:text-[36px] max-lg:text-[22px] max-sm:ml-4">Download
+              Rentcars App for
+              <span class=" text-[#1572D3]">
+                FREE</span>
+            </h2>
+            <p class="text-[16px] fomt-[400] py-[20px] max-lg:text-[12px] max-sm:ml-4">For faster, easier booking and
+              exclusive
+              deals.</p>
+            <div class="flex gap-[11.51px] mx-auto max-md:justify-evenly max-lg:justify-evenly">
+              <img src="./img/google play.png" alt="">
+              <img src="./img/app store.png" alt="">
+            </div>
+          </div>
+          <div>
+            <img src="img/iPhone 14 Pro Space Black Mockup.png" alt=""
+              class="mt-[72px] mr-[81px] max-md:mt-[50px] max-md:mx-auto max-sm:mt-[100px]">
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-[#051C34] text-[#D6D6D6]">
+      <div class="flex justify-between max-w-[1120px] mx-auto max-xl:justify-evenly max-md:flex-col max-md:ml-5">
+        <div class="">
+
+          <div class="">
+            <div class="mt-[41px] mb-[32px]">
+              <img src="img/white logo.png" alt="rentcars">
+            </div>
+            <div class="flex gap-2">
+              <div>
+                <img src="img/location2.png" alt="">
+              </div>
+              <div>
+                <p class="text-[14px] font-[400] leading-[150%]">
+                  25566 Hc 1, Glenallen, <br>Alaska, 99588, USA
+                </p>
+              </div>
+            </div>
+            <div class="flex my-[24px] gap-2">
+              <div>
+                <img src="img/call.png" alt="">
+              </div>
+              <div>
+                <p class="text-[14px] font-[400]">
+                  +603 4784 273 12
+                </p>
+              </div>
+            </div>
+            <div class="flex mb-[69.28px] gap-2">
+              <div>
+                <img src="img/sms.png" alt="">
+              </div>
+              <div>
+                <p class="text-[14px] font-[400]">
+                  rentcars@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-[48px]">
+          <h3 class="text-[#FFFFFF]">Our Product</h3>
+          <ul class="mt-[32px] flex gap-[16px] flex-col">
+            <li class="text-[14px] font-[400]"><a href="#">Career</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Car</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Packages</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Features</a></li>
+            <li class=" text-[14px] font-[400]"><a href="#">Priceline</a></li>
+          </ul>
+        </div>
+        <div class="mt-[48px]">
+          <h3 class="text-[#FFFFFF]">Resources</h3>
+          <ul class="mt-[32px] flex gap-[16px] flex-col">
+            <li class="text-[14px] font-[400]"><a href="#">Download</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Help Center</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Guides</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Partner Network</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Cruises</a></li>
+            <li class=" text-[14px] font-[400]"><a href="#">Developer</a></li>
+          </ul>
+        </div>
+        <div class="mt-[48px]">
+          <h3 class="text-[#FFFFFF]">About Rentcars</h3>
+          <ul class="mt-[32px] flex gap-[16px] flex-col">
+
+            <li class="text-[14px] font-[400]"><a href="#">Why choose us</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Our Story</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">Investor Relations</a></li>
+            <li class="text-[14px] font-[400]"><a href="#">press Center</a></li>
+            <li class=" text-[14px] font-[400]"><a href="#">Advertise</a></li>
+          </ul>
+        </div>
+        <div class=" mt-[48px]">
+          <h3 class="text-[#FFFFFF]">Follow Us</h3>
+          <div class="flex mt-[32px] gap-[16px]">
+            <div>
+              <img src="img/facebook.png" alt="">
+            </div>
+            <div>
+              <img src="img/instagram.png" alt="">
+            </div>
+            <div>
+              <img src="img/youtube.png" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <hr
+        class="w-[1140px] mx-auto text-[#575757] mt-[64px] max-xl:max-w-[1000px] max-lg:max-w-[730px] max-md:max-w-[415px]">
+
+      <div
+        class=" max-w-[1120px] mx-auto pt-8 bg-[#051C34] max-xl:max-w-[1000px] max-xl:mx-auto max-lg:ml-5 max-lg:mx-auto md:mx-auto">
+        <p class="text-[12px] font-[400] pb-10 ">Copyright 2023 ・ Rentcars, All Rights Reserved.</p>
+      </div>
+
+
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.getElementById("menu").addEventListener("click", function () {
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenu.classList.toggle("hidden");
+    });
+
+
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 40,
+      loop: true,
+      slideToClickedSlide: true,
+    });
+  </script>
+</body>
+
+</html>
